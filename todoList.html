@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo List</title>
+	<link rel="stylesheet" type="text/css" href="todoList.css">
+</head>
+<body>
+	<h1>Cabela's Shopping List</h1>
+<!-- set form for the todo list-->
+	<form id= "todoForm">
+		<input id= "todoInput" onfocus="this.value=''">
+		<button type= "button" onclick= "todoList()" >Submit</button>
+
+<!-- When the input field gets focus, replace its current value with an empty string -->
+		<!--<input type="text" "> -->
+		
+	</form>
+
+<!-- unordered list for the todo list-->
+	<ul id= "todoList" style= "list-style: none">
+		<li>Buy Savage 30-30 rifle</li>
+		<li>Buy Glock 45</li>
+		<li>Get 45 ammo</li>
+		<li>Get 30-30 ammo</li>
+		<li>Buy Heritage 22 revolver</li>
+	</ul>
+	<br>
+<!-- link to java script file-->	
+	<script type="text/javascript" src="todoList.js"></script>
+
+<!-- section to remove item from the list-->
+	<script>
+		const ul= document.querySelector('#todoList');
+		ul.addEventListener('click', function(event){
+			this.removeChild(event.target);
+		});
+	</script>
+
+</body>
+</html>
