@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Todo List</title>
+    <link rel="stylesheet" type="text/css" href="todoList.css">
+
+</head>
+<body>
+	<h1>Cabela's Shopping List</h1>
+<!-- set form for the todo list-->
+	<form id= "todoForm">
+		<input id= "todoInput" onfocus="this.value=''">
+		<button type= "button" onclick= "todoList()" >Submit</button>
+
+<!-- When the input field gets focus, replace its current value with an empty string -->
+				
+	</form>
+
+<!-- unordered list for the todo list-->
+	<ul id= "todoList" style= "list-style: none">
+		<li>Buy Savage 30-30 rifle</li>
+		<li>Buy Glock 45</li>
+		<li>Get 45 ammo</li>
+		<li>Get 30-30 ammo</li>
+		<li>Buy Heritage 22 revolver</li>
+	</ul>
+	<br>
+<!-- link to javaScript file -->
+	<!--<script type="text/javascript" src="todoListjQuery.js"> </script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> 
+	
+	<script>
+		        
+        $(document).ready(function todoList() {
+
+//Get the new input item
+	        var item= $("#todoInput").value;
+
+	        var text= document.createTextNode(item);
+
+	        var newItem= document.createElement("li");
+//Add new item to the list
+	        newItem.appendChild(text);
+
+	        $("#todoList").appendChild(newItem);
+	
+
+        } );
+
+//Section to remove item from the list   
+        const ul= document.querySelector('#todoList');
+		ul.addEventListener('click', function(event){
+			this.removeChild(event.target);
+        });
+	</script>
+
+
+</body>
+</html>
